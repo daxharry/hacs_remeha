@@ -1,5 +1,5 @@
 # Remeha Home integration for Home Assistant
-This integration lets you control your Remeha Home thermostats from Home Assistant.
+This integration connects Remeha Home heating systems to Home Assistant so you can monitor and control climate zones, domestic hot water, and appliance telemetry from one place.
 
 > **Note :** This is a custom fork of [msvisser/remeha_home](https://github.com/msvisser/remeha_home) with additional sensors and a hot water comfort switch.
 
@@ -32,6 +32,16 @@ You can simply log in using the credentials that you would use in the respective
     - The water pressure
     - **Active Thermal Mode** — current thermal mode of the appliance
 
+## Purpose
+The goal of this fork is to keep the Remeha Home cloud integration usable in Home Assistant while exposing more of the data already available in the Remeha/BDR Thermea mobile API.
+
+It currently:
+- Authenticates with the Remeha Home cloud using the same credentials as the mobile app.
+- Polls dashboard data every 120 seconds.
+- Creates Home Assistant devices for appliances, climate zones, and hot water zones.
+- Adds climate controls, schedule setpoint sensors, appliance telemetry, hot water status/target sensors, fireplace mode switches, and a hot water comfort switch.
+- Includes local brand assets in `custom_components/remeha_home/brand/` so Home Assistant and HACS can display the integration icon from this repository.
+
 ## Data polling
 Data is refreshed every **120 seconds**.
 
@@ -40,10 +50,12 @@ Data is refreshed every **120 seconds**.
 ### Install with HACS (recommended)
 
 1. In HACS, go to **Integrations** → ⋮ → **Custom repositories**
-2. Add `https://github.com/daxharry/remeha_home` — category **Integration**
+2. Add `https://github.com/daxharry/hacs_remeha` — category **Integration**
 3. Search for **Remeha Home** and click `Download`
 4. Restart Home Assistant
 5. See [Setup](#setup)
+
+This repository does not require GitHub releases for HACS installs. HACS installs the integration from the repository source and uses the local Home Assistant manifest plus the brand assets committed with the integration.
 
 ### Install manually
 
