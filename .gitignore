@@ -4,4 +4,9 @@ __pycache__/
 *.pyo
 .env
 *.zip
+*.pem
 AGENTS.md
+.cursor/
+.cursorrules
+secrets.yaml
+.storage/
