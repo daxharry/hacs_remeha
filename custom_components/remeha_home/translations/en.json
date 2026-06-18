@@ -1,0 +1,39 @@
+{
+    "config": {
+        "abort": {
+            "failed_to_authenticate": "Failed to authenticate"
+        },
+        "error": {
+            "failed_to_authenticate": "Invalid email address and/or password"
+        },
+        "step": {
+            "auth": {
+                "description": "Setup the Remeha Home integration using your Remeha Home credentials.",
+                "data": {
+                    "email": "Email address",
+                    "password": "Password"
+                }
+            },
+            "reauth_confirm": {
+                "description": "Failed to refresh the Remeha Home access token. Please re-authenticate with your Remeha Home credentials to continue using this integration."
+            }
+        }
+    },
+    "entity": {
+        "climate": {
+            "remeha_home": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "clock_program_1": "Schedule 1",
+                            "clock_program_2": "Schedule 2",
+                            "clock_program_3": "Schedule 3",
+                            "anti_frost": "Frost protection",
+                            "manual": "Manual"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
